@@ -120,7 +120,7 @@ const UserManagement = () => {
         <div>
           <h2>All Usernames:</h2>
           <ol>
-            {usernames.map((username) => (
+            {usernames.map((username: { id: any; username: any; }) => (
               <li key={username.id}>
                 {username.username}
               </li>
@@ -179,7 +179,7 @@ const UserManagement = () => {
             name="srchUsername"
             placeholder="username"
             value={searchUsername}
-            onChange={(e) => setSearchUsername(e.target.value)}
+            onChange={(e: { target: { value: any; }; }) => setSearchUsername(e.target.value)}
           />
           <button onClick={handleShowEmail}>Show Email</button>
         </div>
@@ -188,7 +188,7 @@ const UserManagement = () => {
       {showEmail && (
         <div>
           <ul>
-            {searchEmail.map((e) => (
+            {searchEmail.map((e: EmailResponse) => (
               <li key={e.id}>
                 {e.email ? e.email : 'N/A'}
               </li>

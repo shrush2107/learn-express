@@ -28,6 +28,7 @@ fs.readFile(path.resolve(__dirname, dataFile), (err, data) => {
   users = JSON.parse(data.toString());
 });
 
+// middleware function to add users to request object
 const addMsgToRequest = (req: UserRequest, res: Response, next: NextFunction) => {
   if (users) {
     req.users = users;
